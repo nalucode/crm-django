@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'css/customers.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>{% block page_header %}{% endblock %}</h1>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

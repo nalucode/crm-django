@@ -1,0 +1,42 @@
+{% extends "customers/base.html" %}
+{% load person_lib %}
+
+{% block title %}{{ person.name }}{% endblock %}
+
+{% block page_header %}Person detail{% endblock %}
+
+{% block content %}
+<div class="person-detail-card">
+    <div class="person-detail-header">
+        <div class="person-detail-name">
+            <h2>{{ person.name }}</h2>
+        </div>
+        <div class="person-detail-cpf">
+            <p>CPF: {{ person.cpf|cpf }}</p>
+        </div>
+    </div>
+    <div class="person-detail-row">
+        <div class="person-detail-email">
+            <p>Email: {{ person.email}}</p>
+        </div>
+        <div class="person-detail-phone">
+            <p>Telefone: {{ person.phone|br_phone}}</p>
+        </div>
+    </div>
+    <div class="person-detail-address">
+        <div class="person-detail-row">
+            <p>Endereço:{{ person.address1}}</p>
+            <p>Complemento:{{ person.address2}}</p>
+        </div>
+        <div class="person-detail-row">
+            <p>Código postal: {{ person.postal_code|br_postal_code}}</p>
+            <p>Cidade: {{ person.city}}</p>
+            <p>Pais: {{ person.country}}</p>
+        </div>
+    </div>
+    <div class="person-detail-footer">
+        <p>Criado em: {{ person.created_on|date:"d/m/Y H:i:s"}}</p>
+        <p>Ultima modificação: {{ person.updated_on|date:"d/m/Y H:i:s"}}</p>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends "customers/base.html" %}
+{% load person_lib %}
+
+{% block title %}Persons {% endblock %}
+
+{% block page_header %}Persons list{% endblock %}
+
+{% block content %}
+    <table>
+        <thead>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th/>
+        </thead>
+        <tbody>
+        {% for person in person_list %}
+            <tr>
+                <td>{{ person.name }}</td>
+                <td>{{ person.cpf|cpf }}</td>
+                <td>{{ person.email }}</td>
+                <td><a href="{{ person.get_absolute_url }}">Visualizar</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
