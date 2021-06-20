@@ -1,0 +1,6 @@
+[flake8]
+ignore = E302,E305,D202,D300
+exclude = .git,__pycache__,env,migrations, settings.py
+inline-quotes = '
+docstring-quotes = '''
+multiline-quotes = '''
